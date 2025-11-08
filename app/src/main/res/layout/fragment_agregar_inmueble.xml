@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ui.Inmuebles.AgregarInmuebleFragment">
+
+    <EditText
+        android:id="@+id/etCDireccion"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="48dp"
+        android:hint="Direccion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etCTipo"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
+        android:hint="Tipo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCUso" />
+
+    <EditText
+        android:id="@+id/etCSuperficie"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
+        android:hint="Superficie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCTipo" />
+
+    <EditText
+        android:id="@+id/etCUso"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
+        android:hint="Uso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCPrecio" />
+
+    <EditText
+        android:id="@+id/etCAmbientes"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
+        android:hint="Ambiente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCSuperficie" />
+
+    <EditText
+        android:id="@+id/etCPrecio"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
+        android:hint="Precio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCDireccion" />
+
+    <Button
+        android:id="@+id/btnAgregarFoto"
+        android:layout_width="125dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="76dp"
+        android:text="Agregar Foto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCAmbientes" />
+
+    <Button
+        android:id="@+id/btnAgregarInmueble"
+        android:layout_width="129dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="56dp"
+        android:text="Agregar inmueble"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAgregarFoto" />
+
+    <ImageView
+        android:id="@+id/ivCInmuebleFoto"
+        android:layout_width="160dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnAgregarFoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCAmbientes"
+        tools:src="@tools:sample/avatars" />
+</androidx.constraintlayout.widget.ConstraintLayout>
