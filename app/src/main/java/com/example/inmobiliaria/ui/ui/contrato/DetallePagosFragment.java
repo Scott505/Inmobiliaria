@@ -13,31 +13,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.inmobiliaria.R;
-import com.example.inmobiliaria.databinding.FragmentContratoBinding;
 
-public class ContratoFragment extends Fragment {
+public class DetallePagosFragment extends Fragment {
 
-    private ContratoViewModel viewModel;
-    private FragmentContratoBinding binding;
+    private DetallePagosViewModel mViewModel;
 
-
-    public static ContratoFragment newInstance() {
-        return new ContratoFragment();
+    public static DetallePagosFragment newInstance() {
+        return new DetallePagosFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        viewModel = new ViewModelProvider(this).get(ContratoViewModel.class);
-        binding = FragmentContratoBinding.inflate(inflater, container, false);
-
-
-
-        return binding.getRoot();
+        return inflater.inflate(R.layout.fragment_detalle_pagos, container, false);
     }
+
     @Override
-    public void onDestroy() {
-        super.onDestroy();
-        binding = null;
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mViewModel = new ViewModelProvider(this).get(DetallePagosViewModel.class);
+        // TODO: Use the ViewModel
     }
+
 }

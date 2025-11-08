@@ -5,8 +5,8 @@ import java.util.Date;
 
 public class Contrato {
     private int idContrato;
-    private LocalDateTime fechaInicio;
-    private LocalDateTime fechaFinalizacion;
+    private String  fechaInicio;
+    private String  fechaFinalizacion;
     private double montoAlquiler;
     private boolean estado;
     private int idInquilino;
@@ -14,7 +14,7 @@ public class Contrato {
     private Inquilino inquilino;
     private Inmueble inmueble;
 
-    public Contrato(int idContrato, LocalDateTime fechaInicio, LocalDateTime fechaFinalizacion, double montoAlquiler, boolean estado, int idInquilino, int idInmueble, Inquilino inquilino, Inmueble inmueble) {
+    public Contrato(int idContrato, String  fechaInicio, String  fechaFinalizacion, double montoAlquiler, boolean estado, int idInquilino, int idInmueble, Inquilino inquilino, Inmueble inmueble) {
         this.idContrato = idContrato;
         this.fechaInicio = fechaInicio;
         this.fechaFinalizacion = fechaFinalizacion;
@@ -37,19 +37,19 @@ public class Contrato {
         this.idContrato = idContrato;
     }
 
-    public LocalDateTime getFechaInicio() {
+    public String  getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(LocalDateTime fechaInicio) {
+    public void setFechaInicio(String  fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
-    public LocalDateTime getFechaFinalizacion() {
+    public String  getFechaFinalizacion() {
         return fechaFinalizacion;
     }
 
-    public void setFechaFinalizacion(LocalDateTime fechaFinalizacion) {
+    public void setFechaFinalizacion(String  fechaFinalizacion) {
         this.fechaFinalizacion = fechaFinalizacion;
     }
 

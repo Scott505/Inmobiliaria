@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#474747"
+    tools:context=".ui.ui.contrato.DetalleContratoFragment">
+
+    <!-- Título principal -->
+    <TextView
+        android:id="@+id/tvDetalleContrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Información del Contrato"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Contenedor con borde y fondo -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardInfoContrato"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#EFEFEF"
+        app:layout_constraintTop_toBottomOf="@id/tvDetalleContrato"
+        app:layout_constraintBottom_toTopOf="@id/btnPagos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <!-- Código -->
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Código de Contrato"
+                android:textColor="#616161"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCodigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textColor="#2C3E50"
+                app:layout_constraintTop_toBottomOf="@id/textView3"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Fecha Inicio -->
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha Inicio"
+                android:textColor="#616161"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tvCodigo"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvFechaInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textColor="#2C3E50"
+                app:layout_constraintTop_toBottomOf="@id/textView6"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Fecha Fin -->
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha Finalización"
+                android:textColor="#616161"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tvFechaInicio"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvFechaFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textColor="#2C3E50"
+                app:layout_constraintTop_toBottomOf="@id/textView8"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Monto -->
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monto Alquiler"
+                android:textColor="#616161"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tvFechaFinal"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvMonto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textColor="#2C3E50"
+                app:layout_constraintTop_toBottomOf="@id/textView10"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Inquilino -->
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inquilino"
+                android:textColor="#616161"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tvMonto"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvInquilino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textColor="#2C3E50"
+                app:layout_constraintTop_toBottomOf="@id/textView12"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Inmueble -->
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inmueble"
+                android:textColor="#616161"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tvInquilino"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvDetalleContratoInmueble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textColor="#2C3E50"
+                app:layout_constraintTop_toBottomOf="@id/textView14"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Botón de Pagos -->
+    <Button
+        android:id="@+id/btnPagos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver Pagos"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2196F3"
+        android:layout_marginBottom="24dp"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

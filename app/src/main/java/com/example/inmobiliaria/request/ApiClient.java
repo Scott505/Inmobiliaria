@@ -3,6 +3,7 @@ package com.example.inmobiliaria.request;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.inmobiliaria.modelo.Contrato;
 import com.example.inmobiliaria.modelo.Inmueble;
 import com.example.inmobiliaria.modelo.Propietario;
 import com.google.gson.Gson;
@@ -25,6 +26,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 public class ApiClient {
     public static final String URLBASE = "https://inmobiliariaulp-amb5hwfqaraweyga.canadacentral-01.azurewebsites.net/";
@@ -70,6 +72,14 @@ public class ApiClient {
                 @Part MultipartBody.Part imagen,
                 @Part("inmueble")RequestBody inmueble
         );
+
+        @GET("/api/inmuebles/GetContratoVigente")
+        Call<List<Inmueble>> obtenerInmueblesConContrato(@Header("Authorization") String token);
+
+        @GET("/api/contratos/inmueble/{id}")
+        Call<Contrato> obtenerContratoPorInmueble(@Header("Authorization") String token, @Path("id") int id);
+
+
     }
 
     public static void guardarToken(Context context, String token){
