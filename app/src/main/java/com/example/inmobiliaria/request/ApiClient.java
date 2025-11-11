@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import com.example.inmobiliaria.modelo.Contrato;
 import com.example.inmobiliaria.modelo.Inmueble;
+import com.example.inmobiliaria.modelo.Pagos;
 import com.example.inmobiliaria.modelo.Propietario;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -79,7 +80,8 @@ public class ApiClient {
         @GET("/api/contratos/inmueble/{id}")
         Call<Contrato> obtenerContratoPorInmueble(@Header("Authorization") String token, @Path("id") int id);
 
-
+        @GET("/api/pagos/contrato/{id}")
+        Call<List<Pagos>> obtenerPagosPorContrato(@Header("Authorization") String token, @Path("id") int id);
     }
 
     public static void guardarToken(Context context, String token){
@@ -91,6 +93,13 @@ public class ApiClient {
     public static String obtenerToken(Context context){
         SharedPreferences preferences = context.getSharedPreferences("token", Context.MODE_PRIVATE);
         return preferences.getString("token", null);
+    }
+
+    public static void borrarToken(Context context) {
+        SharedPreferences sp = context.getSharedPreferences("token.dat", 0);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.remove("token");
+        editor.apply();
     }
 
 }

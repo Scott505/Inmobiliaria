@@ -77,6 +77,18 @@
         <action
             android:id="@+id/action_detalleContratoFragment_to_nav_contratos"
             app:destination="@id/nav_contratos" />
+        <action
+            android:id="@+id/action_detalleContratoFragment_to_detallePagosFragment"
+            app:destination="@id/detallePagosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detallePagosFragment"
+        android:name="com.example.inmobiliaria.ui.ui.contrato.DetallePagosFragment"
+        android:label="Detalle de pagos"
+        tools:layout="@layout/fragment_detalle_pagos" >
+        <action
+            android:id="@+id/action_detallePagosFragment_to_detalleContratoFragment"
+            app:destination="@id/detalleContratoFragment" />
     </fragment>
 
 </navigation>
