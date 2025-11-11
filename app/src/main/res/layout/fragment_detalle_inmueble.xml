@@ -5,105 +5,130 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ui.Inmuebles.DetalleInmuebleFragment" >
+    android:background="#F5F6FF"
+    android:padding="16dp"
+    tools:context=".ui.ui.Inmuebles.DetalleInmuebleFragment">
 
-    <TextView
-        android:id="@+id/tvLatitud"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <!-- Imagen principal -->
+    <ImageView
+        android:id="@+id/ivDetInmuebles"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerCrop"
+        android:background="#D9D9D9"
+        android:elevation="4dp"
+        android:contentDescription="Imagen del inmueble"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAmbientes" />
-
-    <TextView
-        android:id="@+id/tvDireccioni"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvId" />
+        tools:src="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/tvLongitud"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLatitud" />
-
+    <!-- ID -->
     <TextView
         android:id="@+id/tvId"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:text="ID: 001"
+        android:textColor="#1E1E1E"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/ivDetInmuebles"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Dirección -->
+    <TextView
+        android:id="@+id/tvDireccioni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Dirección: Calle Falsa 123"
+        android:textColor="#333333"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/tvId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Uso -->
     <TextView
         android:id="@+id/tvUso"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Uso: Residencial"
+        android:textColor="#333333"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/tvDireccioni"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDireccioni" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/tvValor"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="52dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLongitud" />
-
+    <!-- Ambientes -->
     <TextView
         android:id="@+id/tvAmbientes"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="20dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Ambientes: 3"
+        android:textColor="#333333"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/tvUso"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUso" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/ivDetInmuebles"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="68dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+    <!-- Latitud -->
+    <TextView
+        android:id="@+id/tvLatitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Latitud: -34.6037"
+        android:textColor="#333333"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/tvAmbientes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvValor"
-        tools:src="@tools:sample/avatars" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Longitud -->
+    <TextView
+        android:id="@+id/tvLongitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Longitud: -58.3816"
+        android:textColor="#333333"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/tvLatitud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Valor -->
+    <TextView
+        android:id="@+id/tvValor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Valor: $150.000"
+        android:textColor="#1E40AF"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvLongitud"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Disponible -->
     <CheckBox
         android:id="@+id/cbDisponibleInmuebles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:text="Disponible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:textColor="#1E1E1E"
+        android:textSize="15sp"
+        android:buttonTint="#1E40AF"
+        app:layout_constraintTop_toBottomOf="@id/tvValor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivDetInmuebles" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

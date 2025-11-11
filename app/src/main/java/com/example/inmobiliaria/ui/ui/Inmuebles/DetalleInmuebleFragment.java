@@ -33,13 +33,13 @@ public class DetalleInmuebleFragment extends Fragment {
         binding = FragmentDetalleInmuebleBinding.inflate(getLayoutInflater());
 
         mViewModel.getmInmueble().observe(getViewLifecycleOwner(), inmueble -> {
-            binding.tvId.setText(inmueble.getIdInmueble()+"");
-            binding.tvDireccioni.setText(inmueble.getDireccion());
-            binding.tvUso.setText(inmueble.getUso());
-            binding.tvValor.setText(String.valueOf(inmueble.getValor()));
-            binding.tvAmbientes.setText(String.valueOf(inmueble.getAmbientes()));
-            binding.tvLongitud.setText(String.valueOf(inmueble.getLongitud()));
-            binding.tvLatitud.setText(String.valueOf(inmueble.getLatitud()));
+            binding.tvId.setText("ID: "+ inmueble.getIdInmueble());
+            binding.tvDireccioni.setText("Dirección: "+ inmueble.getDireccion());
+            binding.tvUso.setText("Uso: "+ inmueble.getUso());
+            binding.tvValor.setText("Precio: "+ inmueble.getValor());
+            binding.tvAmbientes.setText("Ambientes: "+ inmueble.getAmbientes());
+            binding.tvLongitud.setText("Longitud: "+ inmueble.getLongitud());
+            binding.tvLatitud.setText("Latitud: "+ inmueble.getLatitud());
             binding.cbDisponibleInmuebles.setChecked(inmueble.isDisponible());
             Glide.with(getContext())
                     .load(URLBASE+inmueble.getImagen())

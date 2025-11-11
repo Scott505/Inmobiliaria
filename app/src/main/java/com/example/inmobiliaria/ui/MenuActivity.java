@@ -5,13 +5,19 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.example.inmobiliaria.R;
+import com.example.inmobiliaria.ViewModel.LoginActivityViewModel;
+import com.example.inmobiliaria.databinding.NavHeaderMenuBinding;
+import com.example.inmobiliaria.modelo.Propietario;
 import com.example.inmobiliaria.request.ApiClient;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -25,10 +31,12 @@ public class MenuActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMenuBinding binding;
+    private LoginActivityViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        viewModel = new ViewModelProvider(this).get(LoginActivityViewModel.class);
 
         binding = ActivityMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -48,14 +56,25 @@ public class MenuActivity extends AppCompatActivity {
         navigationView.getMenu().findItem(R.id.nav_logout).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(@NonNull MenuItem item) {
-                ApiClient.borrarToken(MenuActivity.this);
-                Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                finish();
+                viewModel.logout();
                 return true;
             }
         });
+
+        viewModel.getLogout().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean CierraSesion) {
+                if (CierraSesion) {
+                    Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
+                    //Cierro/destruyo las actividades por encima si ya esta en pila
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Toast.makeText(MenuActivity.this, "Sesión cerrada", Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+
     }
 
     @Override

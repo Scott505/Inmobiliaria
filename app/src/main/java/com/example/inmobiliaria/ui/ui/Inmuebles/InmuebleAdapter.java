@@ -46,7 +46,7 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.Inmueb
         Inmueble inmueble = lista.get(position);
         holder.tvDireccion.setText(inmueble.getDireccion());
         holder.tvTipo.setText(inmueble.getTipo());
-        holder.tvPrecio.setText(String.valueOf(inmueble.getValor()));
+        holder.tvPrecio.setText(inmueble.getValor()+"");
         Glide.with(context)
                 .load(URLBASE + inmueble.getImagen())
                 .error("null")
