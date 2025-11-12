@@ -67,7 +67,7 @@ public class ApiClient {
         Call<Inmueble> actualizarInmueble(@Header("Authorization") String token, @Body Inmueble inmueble);
 
         @Multipart
-        @POST("api/inmuebles/agregar")
+        @POST("api/inmuebles/cargar")
         Call<Inmueble> agregarInmueble(
                 @Header("Authorization") String token,
                 @Part MultipartBody.Part imagen,

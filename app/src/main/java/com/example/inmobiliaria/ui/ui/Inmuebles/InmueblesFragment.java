@@ -29,6 +29,7 @@ public class InmueblesFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         viewModel = new ViewModelProvider(this).get(InmueblesViewModel.class);
         binding = FragmentInmueblesBinding.inflate(inflater, container, false);
+        viewModel.cargarInmuebles();
 
         viewModel.getmInmueble().observe(getViewLifecycleOwner(), new Observer<List<Inmueble>>() {
             @Override

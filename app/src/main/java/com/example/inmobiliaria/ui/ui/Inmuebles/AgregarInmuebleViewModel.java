@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -93,6 +94,7 @@ public class AgregarInmuebleViewModel extends AndroidViewModel {
                     if (response.isSuccessful()){
                         Toast.makeText(getApplication(), "Inmueble agregado", Toast.LENGTH_SHORT).show();
                     }else {
+                        Log.e("ERROR", "Error al agregar inmueble: " + response.message());
                         Toast.makeText(getApplication(), "Error al agregar inmueble", Toast.LENGTH_SHORT).show();
                     }
                 }
