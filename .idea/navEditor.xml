@@ -61,6 +61,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_detalleContratoFragment_to_detallePagosFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_detalleContratoFragment_to_nav_contratos">
                               <value>
                                 <LayoutPositions />
@@ -100,6 +105,15 @@
                             <option name="x" value="1057" />
                             <option name="y" value="526" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_detallePagosFragment_to_detalleContratoFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -180,6 +194,18 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="salirFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1256" />
+                            <option name="y" value="129" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

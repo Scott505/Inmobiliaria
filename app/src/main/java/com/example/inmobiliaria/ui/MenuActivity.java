@@ -31,12 +31,10 @@ public class MenuActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMenuBinding binding;
-    private LoginActivityViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewModel = new ViewModelProvider(this).get(LoginActivityViewModel.class);
 
         binding = ActivityMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -52,28 +50,6 @@ public class MenuActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        navigationView.getMenu().findItem(R.id.nav_logout).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(@NonNull MenuItem item) {
-                viewModel.logout();
-                return true;
-            }
-        });
-
-        viewModel.getLogout().observe(this, new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean CierraSesion) {
-                if (CierraSesion) {
-                    Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
-                    //Cierro/destruyo las actividades por encima si ya esta en pila
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Toast.makeText(MenuActivity.this, "Sesión cerrada", Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        });
 
     }
 

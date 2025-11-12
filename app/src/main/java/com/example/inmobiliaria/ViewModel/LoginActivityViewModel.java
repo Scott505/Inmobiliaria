@@ -22,10 +22,6 @@ import retrofit2.Response;
 public class LoginActivityViewModel extends AndroidViewModel {
 
     private MutableLiveData<Boolean> mLogin;
-    private MutableLiveData<Boolean> mLogout = new MutableLiveData<>();
-    public LiveData<Boolean> getLogout() {
-        return mLogout;
-    }
     public LiveData<Boolean> getmLogin() {
         if (mLogin == null) {
             mLogin = new MutableLiveData<>();
@@ -64,14 +60,5 @@ public class LoginActivityViewModel extends AndroidViewModel {
                 Toast.makeText(getApplication(), "Error en la conexión", Toast.LENGTH_SHORT).show();
             }
         });
-        resetLogout();
-    }
-
-    public void logout() {
-        ApiClient.borrarToken(getApplication());
-        mLogout.postValue(true);
-    }
-    public void resetLogout() {
-        mLogout.setValue(false);
     }
 }
